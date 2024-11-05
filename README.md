@@ -184,7 +184,7 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
    ```
    -Copy the address and paste it into your browser to access the 2048 game application.
    ```
-    ![Alt text](Snapshots/2048 DEPLY IMG.png.png)
+    Snapshots/2048 DEPLY IMG.png.
    ```
    -By following this comprehensive guide, you have successfully deployed the 2048 game application using AWS EKS. This deployment leverages the power of AWS-managed services to provide a scalable, secure, and highly 
     available Kubernetes environment. With the EKS cluster in place, you can now explore further customization
