@@ -175,7 +175,7 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     eksctl utils associate-iam-oidc-provider --cluster demo-cluster --approve
     ```
 
-    ![AWS LB](https://github.com/user-attachments/assets/5a9fd028-af26-4954-8eec-9183e2391bb1)
+   ![AWS LB](https://github.com/user-attachments/assets/0f6f71ae-2acc-4cfa-bbd9-78b0c0481799)
 
 
 ## 2.4 Verify the Deployment
