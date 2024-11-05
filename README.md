@@ -176,15 +176,21 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     ```
 
    ![AWS LB](https://github.com/user-attachments/assets/0f6f71ae-2acc-4cfa-bbd9-78b0c0481799)
+
 4. **Install the ALB Ingress Controller**
    ```
     helm repo add eks https://aws.github.io/eks-charts
     helm repo update eks
     helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=demo-cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller --      set region=us-east-1 --set vpcId=<your-vpc-id>
-  ```
+   ```
 
 
-Download and install Helm. Refer: https://helm.sh/docs/intro/install/
+ 5. **Download and install Helm**
+   ```
+    https://helm.sh/docs/intro/install/
+   ```
+
+   ![HELM INSTALL TERMINAL](https://github.com/user-attachments/assets/b7ac1f2b-f1d8-4a99-802f-91cef26d19ab)
 
 
 ## 2.4 Verify the Deployment
