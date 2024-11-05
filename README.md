@@ -58,6 +58,9 @@ With IAM users set up, you can now configure the AWS CLI and kubectl on your loc
      ```
      eksctl create cluster --name demo-cluster --region us-east-1 --fargate
      ```
+     
+![EKS-CLUSTER](https://github.com/user-attachments/assets/eeac7e9a-0844-49eb-9d4e-aa7ad2882eb8)
+
   
 6. **Configuring kubectl for EKS**:
    - Once kubectl is installed, you need to configure it to work with your EKS cluster.
@@ -183,6 +186,8 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     kubectl get ingress -n game-2048
    ```
    -Copy the address and paste it into your browser to access the 2048 game application.
+
+   
    ![2048 DEPLY IMG](https://github.com/user-attachments/assets/5fdf461f-eec3-4554-8aa0-742a109664ba)
   
    -By following this comprehensive guide, you have successfully deployed the 2048 game application using AWS EKS. This deployment leverages the power of AWS-managed services to provide a scalable, secure, and highly 
