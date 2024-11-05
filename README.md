@@ -171,6 +171,23 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     ```
     eksctl utils associate-iam-oidc-provider --cluster demo-cluster --approve
     ```
+## 2.4 Verify the Deployment
+   -Verify the deployment of the ALB Ingress Controller.
+   ```
+    kubectl get deployment -n kube-system aws-load-balancer-controller
+    kubectl get pods -n kube-system
+   ```
+## 2.5 Access the Deployment
+   -Retrieve the external endpoint for the 2048 application.
+   ```
+    kubectl get ingress -n game-2048
+   ```
+   -Copy the address and paste it into your browser to access the 2048 game application.
+   ```
+    ![Alt text](Snapshots/2048 DEPLY IMG.png.png)
+   ```
+   -By following this comprehensive guide, you have successfully deployed the 2048 game application using AWS EKS. This deployment leverages the power of AWS-managed services to provide a scalable, secure, and highly 
+    available Kubernetes environment. With the EKS cluster in place, you can now explore further customization
      
 
 
