@@ -174,6 +174,10 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     ```
     eksctl utils associate-iam-oidc-provider --cluster demo-cluster --approve
     ```
+
+    ![AWS LB](https://github.com/user-attachments/assets/5a9fd028-af26-4954-8eec-9183e2391bb1)
+
+
 ## 2.4 Verify the Deployment
    -Verify the deployment of the ALB Ingress Controller.
    ```
