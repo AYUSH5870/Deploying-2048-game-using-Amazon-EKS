@@ -51,15 +51,20 @@ With IAM users set up, you can now configure the AWS CLI and kubectl on your loc
      https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html
      ```
 
-3. **Installing kubectl**:
+4. **Installing kubectl**:
    - Install kubectl on your local machine. Instructions can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
-
-4. **Configuring kubectl for EKS**:
+     
+5. **Create the EKS cluster**:
+     ```
+     eksctl create cluster --name demo-cluster --region us-east-1 --fargate
+     ```
+  
+6. **Configuring kubectl for EKS**:
    - Once kubectl is installed, you need to configure it to work with your EKS cluster.
    - In the AWS Management Console, go to the EKS service and select your cluster.
    - Click on the "Config" button and follow the instructions to update your kubeconfig file. Alternatively, you can use the AWS CLI to update the kubeconfig file:
      ```
-     aws eks update-kubeconfig --name your-cluster-name
+     aws eks update-kubeconfig --name democluster --region us-east-1
      ```
    - Verify the configuration by running a kubectl command against your EKS cluster:
      ```
@@ -145,8 +150,27 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
 3. **Update EKS Worker Node Launch Configuration**:
    - When launching your EKS worker nodes, specify the IAM role ARN (Amazon Resource Name) of the IAM role that includes the necessary IAM policy.
    - The IAM role allows the worker nodes to authenticate with the EKS cluster and access AWS resources based on the permissions defined in the attached IAM policy.
+## 2.3 Deploying the 2048 Application
+1. **Create a Fargate Profile**:
+   ```
+   -First, create a Fargate profile for the namespace where the 2048 game will run.
+   eksctl create fargateprofile \
+    --cluster demo-cluster \
+    --region us-east-1 \
+    --name alb-sample-app \
+    --namespace game-2048
+   ```
+2. **Deploy the Application**:
+   - Create the namespace, deployment, service, and ingress resources using a single YAML file.
+   - use the yaml file provided in the repository
+   - OR
+     ```
+     kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
+     ```
+3.  **Install the Ingress Controller**:
+    ```
+    eksctl utils associate-iam-oidc-provider --cluster demo-cluster --approve
+    ```
+     
 
-By configuring IAM policies and associating them with IAM roles, you grant specific permissions to your EKS worker nodes, ensuring they can interact with AWS resources as needed while maintaining security and access control.
-
-By completing these steps, your AWS environment is ready to host an Amazon EKS cluster. You can proceed with creating an EKS cluster using the AWS Management Console or AWS CLI as described in section 3.
 
