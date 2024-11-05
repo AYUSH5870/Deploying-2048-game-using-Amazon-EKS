@@ -74,7 +74,7 @@ With IAM users set up, you can now configure the AWS CLI and kubectl on your loc
      kubectl get nodes
      ```
 
-## 2.3 Preparing Networking and Security Groups for EKS
+## 2.4 Preparing Networking and Security Groups for EKS
 
 Before launching an EKS cluster, you need to prepare the networking and security groups to ensure proper communication and security within the cluster:
 
@@ -153,7 +153,7 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
 3. **Update EKS Worker Node Launch Configuration**:
    - When launching your EKS worker nodes, specify the IAM role ARN (Amazon Resource Name) of the IAM role that includes the necessary IAM policy.
    - The IAM role allows the worker nodes to authenticate with the EKS cluster and access AWS resources based on the permissions defined in the attached IAM policy.
-## 2.3 Deploying the 2048 Application
+## 2.5 Deploying the 2048 Application
 1. **Create a Fargate Profile**:
    ```
    -First, create a Fargate profile for the namespace where the 2048 game will run.
@@ -199,7 +199,7 @@ By setting up an Internet Gateway and updating the Route Tables, you provide int
     kubectl get deployment -n kube-system aws-load-balancer-controller
     kubectl get pods -n kube-system
    ```
-## 2.5 Access the Deployment
+## 2.6 Access the Deployment
    -Retrieve the external endpoint for the 2048 application.
    ```
     kubectl get ingress -n game-2048
