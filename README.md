@@ -30,7 +30,7 @@ Creating an AWS account is the first step to access and utilize AWS services, in
    - If you selected "Programmatic access" during user creation, you will receive access keys (Access Key ID and Secret Access Key).
    - Store these access keys securely, as they will be used to authenticate API requests made to AWS services.
 
-## 2.2 Configuring the AWS CLI and kubectl
+## 2.2 Configuring the AWS CLI,eksctl and kubectl
 
 With IAM users set up, you can now configure the AWS CLI and kubectl on your local machine to interact with AWS services and EKS clusters:
 
@@ -44,6 +44,12 @@ With IAM users set up, you can now configure the AWS CLI and kubectl on your loc
      ```
    - Enter the access key ID and secret access key of the IAM user you created earlier.
    - Choose a default region and output format for AWS CLI commands.
+3. **eksctl**:
+   - Command line tool for working with EKS clusters.
+   - Refer:
+     ```
+     https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html
+     ```
 
 3. **Installing kubectl**:
    - Install kubectl on your local machine. Instructions can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
